@@ -1,0 +1,120 @@
+footer {
+  margin-top: 70px;
+  .container {
+    padding: 0;
+  }
+  .footer-top {
+    border-top: 1px solid #000;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .wrap {
+      @include flexbox;
+      @include flex-wrap(wrap);
+    }
+    &-wrap {
+      @include flexbox;
+      @include flex-direction(column);
+      height: 100%;
+    }
+  }
+  .menu-footer {
+    .menu {
+      @include flexbox;
+      @include align-items(center);
+      @include flex-direction(row);
+      li {
+        width: 150px;
+        text-align: center;
+        a {
+          color: #000000;
+          display: block;
+          line-height: 1;
+          text-align: center;
+          padding-right: 15px;
+          padding-left: 15px;
+          .txthead {
+            font-size: 18px;
+            letter-spacing: 2px;
+            transition: font-weight .2s ease-in-out;
+          }
+          .txtsub {
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: normal;
+          }
+        }
+        &:hover {
+          a {
+            .txthead {
+              font-weight: 900;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-logo {
+    padding-left: 35px;
+    margin-top: auto;
+  }
+  .footer-bottom {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .footer-info {
+    max-width: 300px;
+    margin-right: 50px;
+    margin-left: auto;
+    .inner {
+      border: 1px solid #000;
+      padding: 15px;
+      text-align: center;
+    }
+    .tlt {
+      margin-bottom: 10px;
+    }
+    li {
+      p {
+        margin-bottom: 10px;
+      }
+      &:last-child {
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .dot {
+        span {
+          background: #000;
+          @include border-radius(50%);
+          width: 10px;
+          height: 10px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    .tel {
+      .txt {
+        span {
+          border: 1px solid #000;
+          padding: 5px;
+          display: inline-block;
+          text-transform: uppercase;
+        }
+      }     
+      a {
+        color: #000;
+      }
+    }
+    .mail {
+      i {
+        font-size: 36px;
+      }
+      a {
+        color: #000;
+      }
+    }
+  }
+}
