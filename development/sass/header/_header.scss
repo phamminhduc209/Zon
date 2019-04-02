@@ -1,10 +1,8 @@
 header {
   position: relative;
   .header-img {
-    background: url(../images/top_pc.jpg);
-    background-attachment: fixed;
+    background: url(../images/top_pc.jpg) no-repeat 100% 100% fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     width: 100%;
@@ -60,7 +58,7 @@ header {
       @include flexbox;
       @include flex-direction(row);
       @include align-items(center);
-      li:hover {
+      li:hover, li.active {
         a {
           .txthead {
             font-weight: 900;
@@ -128,6 +126,23 @@ header {
               height: 40px;
             }
           }
+          .arrow {
+            color: #fff;
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            cursor: pointer;
+            font-size: 10px;
+            &:before {
+              content: "▼";
+            }
+            &.open {
+              &:before {
+                content: "▲";
+              }
+            }
+          }
         }
       }
     }
@@ -152,7 +167,6 @@ header {
     }
   }
 }
-
 @media (max-width: 900px) {
   .header-home {
     .zon-logo {
@@ -162,10 +176,8 @@ header {
   }
   header {
     .header-img {
-      background: url(../images/top_sh.jpg);
-      background-attachment: fixed;
+      background: url(../images/top_sh.jpg) no-repeat 100% 100% fixed;
       background-position: center;
-      background-repeat: no-repeat;
       background-size: cover;
       height: 660px;
       &-txt {
@@ -243,26 +255,107 @@ header {
       }
     }
     .zon-menu {
-      position: relative;
+      position: unset;
       .menu {
         display: none;
         position: absolute;
         top: 100%;
-        right: 0;
-          .level0 {
-              width: auto;
-              margin-bottom: 25px;
-              & > a {
-                color: #FFF;
-                text-align: right;
-                .txthead {
-                  font-size: 10px;
+        right: 15px;
+        .level0 {
+          width: auto;
+          margin-bottom: 25px;
+          & > a {
+            color: #FFF;
+            text-align: right;
+            .txthead {
+              font-size: 10px;
+            }
+            .txtsub {
+              display: none;
+            }
+          }
+          &.parent {
+            position: relative;
+            .arrow {
+              display: block;
+            }
+            .level1 {
+              position: relative;
+              top: 15px;
+              margin-left: auto;
+              display: none;
+              background: transparent;
+              li {
+                height: auto;
+                a {
+                  color: #FFF;
+                  padding: 0;
+                  text-align: right;
+                  border-bottom: 1px solid #FFF;
                 }
-                .txtsub {
-                  display: none;
+                &:first-child {
+                  a {
+                    border-top: 1px solid #FFF;
+                  }
                 }
               }
             }
+          }
+        }
+      }
+    }
+    &.header-page {
+      .header-main {
+        position: relative;
+        display: block;
+      }
+      .zon-btn-menu {
+        display: inline-block;
+        margin: 15px 15px 25px auto;
+        display: block !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        span {
+          &:nth-of-type(1) {
+            background: #000;
+          }
+          &:nth-of-type(2) {
+            background: #000;
+          }
+          &:nth-of-type(3) {
+            background: #000;
+          }
+        }
+      }
+      .zon-menu {
+        .menu {
+          position: relative;
+          right: 0;
+          left: 0;
+          background: #FFF;
+          z-index: 9;
+          padding: 0 15px;
+          .level0 {
+            & > a {
+              color: #000;
+            }
+            &.parent {
+              .level1 {
+                a {
+                  color: #000;
+                  border-bottom: 1px solid #000;
+                }
+                &:first-child a {
+                    border-top: 1px solid #000;
+                }
+              }
+              .arrow {
+                color: #000;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -278,7 +371,6 @@ header {
     -webkit-transform: translateY(0) rotate(0);
   }
 }
-
 @keyframes menu-ber01 {
   0% {
     transform: translateY(8px) rotate(45deg);
@@ -290,7 +382,6 @@ header {
     transform: translateY(0) rotate(0);
   }
 }
-
 @-webkit-keyframes menu-ber02 {
   0% {
     -webkit-transform: translateY(-8px) rotate(-45deg);
@@ -302,7 +393,6 @@ header {
     -webkit-transform: translateY(0) rotate(0);
   }
 }
-
 @keyframes menu-ber02 {
   0% {
     transform: translateY(-8px) rotate(-45deg);
@@ -314,7 +404,6 @@ header {
     transform: translateY(0) rotate(0);
   }
 }
-
 @-webkit-keyframes active-menu-ber01 {
   0% {
     -webkit-transform: translateY(0) rotate(0);
@@ -326,7 +415,6 @@ header {
     -webkit-transform: translateY(10px) rotate(45deg);
   }
 }
-
 @keyframes active-menu-ber01 {
   0% {
     transform: translateY(0) rotate(0);
@@ -338,7 +426,6 @@ header {
     transform: translateY(10px) rotate(45deg);
   }
 }
-
 @-webkit-keyframes active-menu-ber03 {
   0% {
     -webkit-transform: translateY(0) rotate(0);
@@ -350,7 +437,6 @@ header {
     -webkit-transform: translateY(-8px) rotate(-45deg);
   }
 }
-
 @keyframes active-menu-ber03 {
   0% {
     transform: translateY(0) rotate(0);

@@ -143,7 +143,22 @@ body {
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  height: 40px; }
 
 .block-cat-home .box-link {
   font-size: 12px;
@@ -262,16 +277,22 @@ body {
   .block-cat-home .box {
     margin-bottom: 60px; }
   .block-cat-home .col-sm-4:last-child .box:last-child {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  .page .page-title .title:after {
+    width: auto; } }
+
+@media (max-width: 767px) {
+  .list-items .col-sm-4 {
+    margin-bottom: 40px; }
+    .list-items .col-sm-4:last-child {
+      margin-bottom: 0; } }
 
 /* ======================== HEADER ======================== */
 header {
   position: relative; }
   header .header-img {
-    background: url(../images/top_pc.jpg);
-    background-attachment: fixed;
+    background: url(../images/top_pc.jpg) no-repeat 100% 100% fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     width: 100%;
@@ -345,7 +366,7 @@ header {
       -moz-align-items: center;
       -ms-align-items: center;
       align-items: center; }
-      header .zon-menu .menu li:hover a .txthead {
+      header .zon-menu .menu li:hover a .txthead, header .zon-menu .menu li.active a .txthead {
         font-weight: 900; }
       header .zon-menu .menu .level0 {
         width: 150px; }
@@ -395,6 +416,18 @@ header {
           header .zon-menu .menu .level0.parent:hover li {
             overflow: visible;
             height: 40px; }
+          header .zon-menu .menu .level0.parent .arrow {
+            color: #fff;
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            cursor: pointer;
+            font-size: 10px; }
+            header .zon-menu .menu .level0.parent .arrow:before {
+              content: "▼"; }
+            header .zon-menu .menu .level0.parent .arrow.open:before {
+              content: "▲"; }
 
 .header-home .zon-logo {
   position: absolute;
@@ -413,10 +446,8 @@ header {
     position: relative;
     top: 0; }
   header .header-img {
-    background: url(../images/top_sh.jpg);
-    background-attachment: fixed;
+    background: url(../images/top_sh.jpg) no-repeat 100% 100% fixed;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     height: 660px; }
     header .header-img-txt p {
@@ -473,12 +504,12 @@ header {
       -webkit-animation: active-menu-ber03 .75s forwards;
       animation: active-menu-ber03 .75s forwards; }
   header .zon-menu {
-    position: relative; }
+    position: unset; }
     header .zon-menu .menu {
       display: none;
       position: absolute;
       top: 100%;
-      right: 0; }
+      right: 15px; }
       header .zon-menu .menu .level0 {
         width: auto;
         margin-bottom: 25px; }
@@ -488,7 +519,58 @@ header {
           header .zon-menu .menu .level0 > a .txthead {
             font-size: 10px; }
           header .zon-menu .menu .level0 > a .txtsub {
-            display: none; } }
+            display: none; }
+        header .zon-menu .menu .level0.parent {
+          position: relative; }
+          header .zon-menu .menu .level0.parent .arrow {
+            display: block; }
+          header .zon-menu .menu .level0.parent .level1 {
+            position: relative;
+            top: 15px;
+            margin-left: auto;
+            display: none;
+            background: transparent; }
+            header .zon-menu .menu .level0.parent .level1 li {
+              height: auto; }
+              header .zon-menu .menu .level0.parent .level1 li a {
+                color: #FFF;
+                padding: 0;
+                text-align: right;
+                border-bottom: 1px solid #FFF; }
+              header .zon-menu .menu .level0.parent .level1 li:first-child a {
+                border-top: 1px solid #FFF; }
+  header.header-page .header-main {
+    position: relative;
+    display: block; }
+  header.header-page .zon-btn-menu {
+    display: inline-block;
+    margin: 15px 15px 25px auto;
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    header.header-page .zon-btn-menu span:nth-of-type(1) {
+      background: #000; }
+    header.header-page .zon-btn-menu span:nth-of-type(2) {
+      background: #000; }
+    header.header-page .zon-btn-menu span:nth-of-type(3) {
+      background: #000; }
+  header.header-page .zon-menu .menu {
+    position: relative;
+    right: 0;
+    left: 0;
+    background: #FFF;
+    z-index: 9;
+    padding: 0 15px; }
+    header.header-page .zon-menu .menu .level0 > a {
+      color: #000; }
+    header.header-page .zon-menu .menu .level0.parent .level1 a {
+      color: #000;
+      border-bottom: 1px solid #000; }
+    header.header-page .zon-menu .menu .level0.parent .level1:first-child a {
+      border-top: 1px solid #000; }
+    header.header-page .zon-menu .menu .level0.parent .arrow {
+      color: #000; } }
 
 @-webkit-keyframes menu-ber01 {
   0% {
@@ -666,8 +748,8 @@ footer {
 
 @media (max-width: 767px) {
   footer .container {
-    padding-right: 15px;
-    padding-left: 15px; }
+    padding-right: 35px;
+    padding-left: 35px; }
   footer .menu-footer .menu {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
@@ -698,6 +780,20 @@ footer {
       width: 50%; }
     footer .footer-logo span {
       display: block; }
+  footer .footer-menu {
+    width: 50%; }
   footer .footer-info {
     max-width: unset;
-    margin-right: 0; } }
+    margin-right: 0;
+    width: 50%; }
+    footer .footer-info li a {
+      font-size: 11px; } }
+
+@media (max-width: 470px) {
+  footer .footer-menu {
+    width: 100%;
+    margin-bottom: 20px; }
+  footer .footer-info {
+    width: 100%; }
+  footer .footer-bottom p {
+    text-align: center !important; } }

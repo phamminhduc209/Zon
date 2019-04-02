@@ -1,1 +1,1 @@
-!function(a){"use strict";a(".zon-btn-menu").on("click",function(){a(this).toggleClass("zon-btn-menu-close"),a(this).next().slideToggle()})}(jQuery);
+!function(a){"use strict";a(".zon-btn-menu").on("click",function(){a(this).toggleClass("zon-btn-menu-close"),a(this).parent().find(".menu").slideToggle()}),a(document).ready(function(){a(".menu li.parent").append('<span class="arrow"></span>'),a(".menu li.parent .arrow").click(function(){a(this).toggleClass("open").siblings(".level1").slideToggle()})})}(jQuery);

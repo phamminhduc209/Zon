@@ -122,8 +122,8 @@ footer {
 @media (max-width: 767px) {
   footer {
     .container {
-      padding-right: 15px;
-      padding-left: 15px;
+      padding-right: 35px;
+      padding-left: 35px;
     }
     .menu-footer {
       .menu {
@@ -160,9 +160,35 @@ footer {
         display: block;
       }
     }
+    .footer-menu {
+      width: 50%;
+    }
     .footer-info {
       max-width: unset;
       margin-right: 0;
+      width: 50%;
+      li {
+        a {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  footer {
+    .footer-menu {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .footer-info {
+      width: 100%;
+    }
+    .footer-bottom {
+      p {
+        text-align: center !important;
+      }
     }
   }
 }

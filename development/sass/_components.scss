@@ -41,6 +41,10 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    height: 40px;
   }
   .box-link {
     font-size: 12px;
@@ -191,6 +195,26 @@
     }
     .col-sm-4:last-child {
       .box:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .page {
+    .page-title {
+      .title {
+        &:after {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .list-items {
+    .col-sm-4 {
+      margin-bottom: 40px;
+      &:last-child {
         margin-bottom: 0;
       }
     }
