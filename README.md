@@ -1,3 +1,1 @@
-"# NhuongQuyen" 
-# traveloka.blog
 # Zon
