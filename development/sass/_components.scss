@@ -2,10 +2,15 @@
   max-width: 900px;
 }
 .txt-main {
-  font-size: 16px;
-  padding: 35px 50px;
+  font-size: 17px;
   margin-top: 70px;
   margin-bottom: 60px;
+  p {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .block-cat-home {
@@ -14,15 +19,14 @@
     padding: 0 15px;
   }
   .box-title {
-    font-size: 21px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
     line-height: normal;
     margin-bottom: 40px;
     p {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: normal;
       border-top: 1px solid #000;
       padding-top: 5px;
@@ -39,11 +43,21 @@
     margin-bottom: 10px;
   }
   .box-link {
+    font-size: 12px;
     text-align: right;
     position: relative;
     margin-top: 10px;
     padding-right: 30px;
     padding-left: 30px;
+  }
+}
+.block-cat-page {
+  .box-img {
+    max-width: 270px;
+    margin: 0 auto;
+  }
+  .box-text {
+    font-size: 24px;
   }
 }
 .more {
@@ -73,7 +87,11 @@
     position: relative;
     top: -30px;
     left: 5px;
-    font-size: 10px;
+    font-size: 9px;
+  }
+  &:hover {
+    -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
   }
 }
 
@@ -82,9 +100,8 @@
   .page-title {
     .title {
       display: block;
-      font-size: 21px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      font-size: 18px;
+      letter-spacing: 5px;
       position: relative;
       text-align: center;
       text-transform: uppercase;
@@ -106,7 +123,7 @@
     .sub-title {
       display: block;
       text-align: center;
-      font-size: 15px;
+      font-size: 12px;
     }
   }
   .page-content {
@@ -115,13 +132,9 @@
 }
 .list-items {
   margin-top: 100px;
-  // .box {
-  //   padding-right: 10px;
-  //   padding-left: 10px;
-  // }
   .item-title {
     font-size: 18px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     span {
       display: block;
       text-align: right;
@@ -147,6 +160,38 @@
       }
       &.img {
         margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .block-cat-home {
+    .box-link {
+      padding-right: 75px;
+    }
+  }
+  .more {
+    right: -15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: auto;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  .txt-main {
+    margin-top: 50px;
+  }
+  .block-cat-home {
+    .box {
+      margin-bottom: 60px;
+    }
+    .col-sm-4:last-child {
+      .box:last-child {
+        margin-bottom: 0;
       }
     }
   }

@@ -24,7 +24,6 @@ footer {
       @include flex-direction(row);
       li {
         width: 150px;
-        text-align: center;
         a {
           color: #000000;
           display: block;
@@ -33,7 +32,7 @@ footer {
           padding-right: 15px;
           padding-left: 15px;
           .txthead {
-            font-size: 18px;
+            font-size: 14px;
             letter-spacing: 2px;
             transition: font-weight .2s ease-in-out;
           }
@@ -60,6 +59,7 @@ footer {
   }
   .footer-bottom {
     border-top: 1px solid #000;
+    font-size: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -115,6 +115,54 @@ footer {
       a {
         color: #000;
       }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    .container {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .menu-footer {
+      .menu {
+        @include flex-direction(column);
+        @include align-items(start);
+        li {
+          width: auto;
+          margin-bottom: 10px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 0;
+            .txthead, .txtsub {
+              display: inline-block;
+              vertical-align: middle;
+            }
+            .txtsub {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    .footer-logo {
+      margin-top: 30px;
+      padding-left: 0;
+      img {
+        width: 50%;
+      }
+      span {
+        display: block;
+      }
+    }
+    .footer-info {
+      max-width: unset;
+      margin-right: 0;
     }
   }
 }

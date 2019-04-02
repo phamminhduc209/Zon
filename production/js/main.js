@@ -1,1 +1,1 @@
-!function(a){"use strict"}(jQuery);
+!function(a){"use strict";a(".zon-btn-menu").on("click",function(){a(this).toggleClass("zon-btn-menu-close"),a(this).next().slideToggle()})}(jQuery);
